@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import Shelf from './Components/Shelf'
 import Head from './Components/Header'
+import Infos from './Components/Infos'
 
 class BooksApp extends React.Component {
   state = {
@@ -32,9 +33,16 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
         <Head />
-        <Shelf title="Reading" shelf="currentlyReading" books={books.filter(book => book.shelf === "currentlyReading")} />
-        <Shelf title="Wanted" shelf="wantToRead" books={books.filter(book => book.shelf === "wantToRead")} />
-        <Shelf title="Read" shelf="read" books={books.filter(book => book.shelf === "read")} />
+        <Route exact path="/" render={() => (
+          <div>
+            <Shelf title="Reading" shelf="currentlyReading" books={books.filter(book => book.shelf === "currentlyReading")} />
+            <Shelf title="Wanted" shelf="wantToRead" books={books.filter(book => book.shelf === "wantToRead")} />
+            <Shelf title="Read" shelf="read" books={books.filter(book => book.shelf === "read")} />
+          </div>
+        )} />
+        <Route path='/books/' render={() => (
+          <Infos />
+        )} />
       </div>
     )
   }

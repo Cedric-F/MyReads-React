@@ -15,7 +15,7 @@ class Head extends Component {
 			<Navbar style={{"backgroundColor": "#0c0c0c", "border": "none", "boxShadow": "0px 6px 5px 1px rgba(0,0,0,0.75)"}}>
 			  <Navbar.Header>
 			    <Navbar.Brand>
-			      <Link to='/'><Image style={{"max-height": "100%"}} src={require('../icons/brand.png')} /></Link>
+			      <Link to='/'><Image style={{"maxHeight": "100%"}} src={require('../icons/brand.png')} /></Link>
 			    </Navbar.Brand>
 			    <Navbar.Toggle />
 			  </Navbar.Header>

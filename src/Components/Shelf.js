@@ -3,6 +3,7 @@ import * as BooksAPI from '../BooksAPI'
 import Book from './Book'
 import TextTruncate from 'react-text-truncate'
 import { Link } from 'react-router-dom'
+import Infos from './Infos'
 
 class Shelf extends Component {
 
@@ -10,8 +11,11 @@ class Shelf extends Component {
 		console.log(this.props.title, 'mounted');
 	}
 
-	render() {
+	handleClick(book) {
+		console.log(book);
+	}
 
+	render() {
 		const { books } = this.props
 
 		return (
@@ -46,7 +50,7 @@ class Shelf extends Component {
                       {book.categories && (<li>{book.categories.join`, `}</li>)}
                       {book.authors && (<li>{book.authors.join`, `}</li>)}
 											{book.averageRating && (<li>{book.averageRating} stars</li>)}
-                      <li><Link to={`/books/${book.title.replace(/\s/g, '_')}`}>More details...</Link></li>
+                      <li><Link to={`/books/${book.title.replace(/\s/g, '_')}`} onClick={() => this.handleClick(book)}>More details...</Link></li>
 										</ul>
 									</div>
 								</div>
