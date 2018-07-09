@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import * as BooksAPI from '../BooksAPI'
 import Book from './Book'
 import Infos from './Infos'
+import cover from '../icons/cover.png'
 
 class Shelf extends Component {
 
@@ -23,22 +24,23 @@ class Shelf extends Component {
 						</div>
 					</div>
 				</div>
-				<ol className="container"
+				<ol className="container book-list"
 					style={{
 						"listStyleType": "none",
 						"display": "flex",
 						"flexDirection": "row",
-						"flexWrap": "wrap",
+						"overflow-x": "auto",
 						"width": "100%",
 						"alignItems:": "center",
-						"justifyContent": "left"
+						"justifyContent": "left",
+						"padding": "0"
 					}}>
 					{
 						books.map(book => {
 							if (!book.hasOwnProperty('averageRating')) book.averageRating = 2.5;
 							return (
-							<li key={book.id} style={{"margin": "10px"}}>
-								<Book book={book} />
+							<li key={book.id} style={{"margin": "10px 10px 0 0"}}>
+								<Book book={book} cover={book.imageLinks ? book.imageLinks.thumbnail : cover}/>
 							</li>
 						)})
 					}
