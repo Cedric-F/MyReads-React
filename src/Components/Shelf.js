@@ -1,18 +1,12 @@
 import React, { Component } from 'react'
 import * as BooksAPI from '../BooksAPI'
 import Book from './Book'
-import TextTruncate from 'react-text-truncate'
-import { Link } from 'react-router-dom'
 import Infos from './Infos'
 
 class Shelf extends Component {
 
 	componentDidMount() {
 		console.log(this.props.title, 'mounted');
-	}
-
-	handleClick(book) {
-		console.log(book);
 	}
 
 	render() {
@@ -42,18 +36,7 @@ class Shelf extends Component {
 					{
 						books.map(book => (
 							<li key={book.id} style={{"margin": "10px"}}>
-								<div className="book-thumbnail">
-									<img src={book.imageLinks.thumbnail} alt={book.title}/>
-									<div className="book-desc">
-										<ul>
-											<li><strong>{book.title}</strong></li>
-                      {book.categories && (<li>{book.categories.join`, `}</li>)}
-                      {book.authors && (<li>{book.authors.join`, `}</li>)}
-											{book.averageRating && (<li>{book.averageRating} stars</li>)}
-                      <li><Link to={`/books/${book.title.replace(/\s/g, '_')}`} onClick={() => this.handleClick(book)}>More details...</Link></li>
-										</ul>
-									</div>
-								</div>
+								<Book book={book} foo="hello"/>
 							</li>
 						))
 					}
