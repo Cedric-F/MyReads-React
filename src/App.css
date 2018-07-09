@@ -8,13 +8,22 @@ body, .app {
   background: #0c0c0c;
 }
 
-.h1, h1 {
-	font-size: 1.4em;
-}
 
 /**********
  * Header *
  **********/
+
+.search {
+	text-decoration: none;
+	color: inherit;
+}
+
+.search:hover,
+.search:active {
+	text-decoration: none;
+	color: inherit;
+	outline: none;
+}
 
 /**********
  *  Main  *
@@ -23,6 +32,10 @@ body, .app {
 /**********
  *  Shelf *
  **********/
+
+.shelf .h1, .shelf h1 {
+	font-size: 1.4em;
+}
 
 /**********
  *  Book  *
@@ -43,7 +56,71 @@ body, .app {
 }
 
 .book-page {
-	width: 800px;
+	min-width: 320px;
+	width: 50%;
 	margin: 0 auto;
 	text-align: center;
+}
+
+.book-page h1,
+.book-page h2 {
+	color: white;
+}
+
+.book-page p {
+	text-align: justify;
+	padding: 20px;
+	color: #ccc;
+}
+
+.cover-n-rating {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	max-width: 250px;
+	margin: 0 auto;
+}
+
+.rate {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 50px;
+}
+
+.rate-amount {
+	margin: 10px 0;
+	font-weight: bold;
+	color: white;
+}
+
+.up-vote {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+
+  border-bottom: 20px solid #eee;
+
+  cursor: pointer;
+}
+
+.down-vote {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+
+  border-top: 20px solid #eee;
+
+  cursor: pointer;
+}
+
+.move {
+	border: 2px solid white;
+	border-radius: 50%;
+	width: 48px;
+	height: 48px;
+	margin-top: 25px;
 }

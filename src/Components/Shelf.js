@@ -34,11 +34,13 @@ class Shelf extends Component {
 						"justifyContent": "left"
 					}}>
 					{
-						books.map(book => (
+						books.map(book => {
+							if (!book.hasOwnProperty('averageRating')) book.averageRating = 2.5;
+							return (
 							<li key={book.id} style={{"margin": "10px"}}>
-								<Book book={book} foo="hello"/>
+								<Book book={book} />
 							</li>
-						))
+						)})
 					}
 				</ol>
 			</div>

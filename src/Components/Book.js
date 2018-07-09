@@ -9,7 +9,7 @@ class Book extends Component {
     console.log(book)
     return (
       <div>
-        <Route exact path='/' render={() => (
+        <Route path='/' render={() => (
           <div className="book-thumbnail">
             <img src={book.imageLinks.thumbnail} alt={book.title}/>
             <div className="book-desc">
