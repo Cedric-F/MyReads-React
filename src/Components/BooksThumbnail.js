@@ -22,7 +22,7 @@ class BooksThumbnail extends Component {
               )
             }
             {book.averageRating && (<li>{book.averageRating} stars</li>)}
-            {(<li><Link to={{ pathname: `/book/${book.title}`, state: { "book": book } }}>More details...</Link></li>)}
+            {(<li><Link to={{ pathname: `/book/${book.title.replace(/\s/g, '_')}`, state: { "book": book } }}>More details...</Link></li>)}
           </ul>
         </div>
       </div>

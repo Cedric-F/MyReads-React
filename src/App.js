@@ -6,7 +6,6 @@ import HomePage from './Components/HomePage'
 import NavBar from './Components/NavBar'
 import BooksInfos from './Components/BooksInfos'
 import SearchPage from './Components/SearchPage'
-import Book from './Components/Book'
 
 class BooksApp extends React.Component {
   state = {
@@ -14,8 +13,20 @@ class BooksApp extends React.Component {
   }
 
   componentDidMount() {
+    console.log('App mounted');
     BooksAPI.getAll().then(books => {
       this.setState({ books });
+    })
+  }
+
+  syncBook(book, shelf) {
+    BooksAPI.update(book, shelf)
+    .then(() => {
+      book.shelf = shelf;
+
+      this.setState((state) => {
+        books: state.books.filter(b => book.id === b.id).concat(!shelf && [ book ])
+      })
     })
   }
 
@@ -28,7 +39,7 @@ class BooksApp extends React.Component {
           <Route path='/' component={NavBar}/>
           <Route exact path='/' render={() => <HomePage books={books}/>}/>
           <Route exact path='/search' render={() => <SearchPage shelved={books}/>}/>
-          <Route exact path='/book/:bookTitle' component={BooksInfos}/>
+          <Route exact path='/book/:bookTitle' render={({location, history}) => <BooksInfos history={history} location={location} onUpdate={this.syncBook.bind(this)}/>}/>
       </div>
     )
   }

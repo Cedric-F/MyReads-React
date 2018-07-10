@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import * as BooksAPI from '../BooksAPI'
-import Book from './Book'
 import BooksThumbnail from './BooksThumbnail'
 import cover from '../icons/cover.png'
 import search from '../icons/search.png'
