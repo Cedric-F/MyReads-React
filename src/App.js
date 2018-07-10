@@ -1,7 +1,6 @@
 import React from 'react'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
-import { Link } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import Shelf from './Components/Shelf'
 import Head from './Components/Header'
@@ -39,12 +38,8 @@ class BooksApp extends React.Component {
             <Shelf title="Read" shelf="read" books={books.filter(book => book.shelf === "read")} />
           </div>
         )} />
-        <Route path='/books/' render=
-          {() => (<Infos book={books}/>)}
-        />
-        <Route exact path='/search' render={() => (
-          <Search shelved={this.state.books}/>
-        )}/>
+        <Route path='/books/' render={() => (<Infos book={books}/>)}/>
+        <Route exact path='/search' render={() => (<Search shelved={this.state.books}/>)}/>
       </div>
     )
   }

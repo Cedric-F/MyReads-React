@@ -13,6 +13,13 @@ body, .app {
  * Header *
  **********/
 
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover {
+	background-color: transparent;
+}
+
 .search,
 .search:hover,
 .search:active,

@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import * as BooksAPI from '../BooksAPI'
-import { Link, Route } from 'react-router-dom'
-import { Nav, Navbar, Header, Brand, NavItem, Toggle, Form, Text, Image } from 'react-bootstrap'
-import FontAwesome from 'react-fontawesome'
+import { Link } from 'react-router-dom'
+import { Nav, Navbar, Header, Brand, NavItem, Toggle, Image } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap';
 
 class Head extends Component {
 
@@ -15,15 +14,17 @@ class Head extends Component {
 			<Navbar style={{"backgroundColor": "#0c0c0c", "border": "none", "boxShadow": "0px 6px 5px 1px rgba(0,0,0,0.75)"}}>
 			  <Navbar.Header>
 			    <Navbar.Brand>
-			      <Link to='/'><Image style={{"maxHeight": "100%"}} src={require('../icons/brand.png')} alt="Home logo" /></Link>
+			      <Link to='/'><Image style={{"maxHeight": "100%"}} src={require('../icons/brand.png')} alt="Home logo" responsive/></Link>
 			    </Navbar.Brand>
 			    <Navbar.Toggle />
 			  </Navbar.Header>
 			  <Navbar.Collapse>
 			    <Nav pullRight>
+			    <LinkContainer to="/search" className="search">
 			      <NavItem eventKey={1}>
-			        <Link to="/search" className="search">Search a book</Link>
+			        Search a book
 			      </NavItem>
+			      </LinkContainer>
 			    </Nav>
 			  </Navbar.Collapse>
 			</Navbar>

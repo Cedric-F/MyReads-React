@@ -21,7 +21,18 @@ class Search extends Component {
 			.then(books => {
 				console.log(books)
 				if (!books || "error" in books) this.setState({ query: '', books: [] })
-				else this.setState({query: input, books: books})
+				else {
+					books.map(book => {
+						for (let b of this.props.shelved) {
+							if (b.id === book.id) {
+								book.averageRating = b.averageRating
+								book.shelf = b.shelf
+							}
+						}
+						return book;
+					})
+					this.setState({query: input, books: books})
+				}
 			})
 		} else this.setState({ query: '', books: [] })
 	}
@@ -33,7 +44,7 @@ class Search extends Component {
 			<div>
 				<div className="search-bar">
 					<img src={search} alt='' className="search-logo" />
-					<input type="text" maxlength="30" placeholder="Search by Author, Genre, Title..." onChange={(e) => this.handleInput(e.target.value)} />
+					<input type="text" maxLength="30" placeholder="Search by Author, Genre, Title..." onChange={(e) => this.handleInput(e.target.value)} />
 				</div>
 				<div className="results">
 					<ul className="container"

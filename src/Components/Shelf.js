@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
-import * as BooksAPI from '../BooksAPI'
 import Book from './Book'
-import Infos from './Infos'
+import { Scrollbars } from 'react-custom-scrollbars'
 import cover from '../icons/cover.png'
 
 class Shelf extends Component {
 
 	componentDidMount() {
 		console.log(this.props.title, 'mounted');
+	}
+
+	scrollLeft() {
+		console.log('left');
+		window.scrollBy(-320, 0)
+	}
+
+	scrollRight() {
+		console.log('right');
+		window.scrollBy(320, 0)
 	}
 
 	render() {
@@ -29,7 +38,7 @@ class Shelf extends Component {
 						"listStyleType": "none",
 						"display": "flex",
 						"flexDirection": "row",
-						"overflow-x": "auto",
+						"overflowX": "auto",
 						"width": "100%",
 						"alignItems:": "center",
 						"justifyContent": "left",

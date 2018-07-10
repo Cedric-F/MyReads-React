@@ -10,7 +10,7 @@ class Book extends Component {
     return (
       <div>
         <div className="book-thumbnail">
-          <img src={cover} alt={book.title}/>
+          <Image src={cover} alt={book.title} responsive/>
           <div className="book-desc">
             <ul>
               <li><strong>{book.title}</strong></li>

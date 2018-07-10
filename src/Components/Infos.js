@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import Book from './Book'
-import { Route } from 'react-router-dom'
 import { Image } from 'react-bootstrap'
 
 class Infos extends Component {
 
 	state = {
-		book: this.props.book
+		book: []
 	}
 
 	componentDidMount() {
@@ -19,7 +17,7 @@ class Infos extends Component {
 	}
 
 	downVote(book) {
-		if (book.averageRating != 0) book.averageRating -= 0.5
+		if (book.averageRating !== 0) book.averageRating -= 0.5
 		this.setState({"book": book})
 	}
 

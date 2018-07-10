@@ -1,5 +1,6 @@
 {
-	"Authors": [
+	"terms":
+	[
 			"Austen",
 			"Bhagat",
 			"Camus",
@@ -23,9 +24,7 @@
 			"Singh",
 			"Thrun",
 			"Tolstoy",
-			"Ultimate"
-	],
-	"Categories": [
+			"Ultimate",
 			"Android",
 			"Art",
 			"Artificial Intelligence",
