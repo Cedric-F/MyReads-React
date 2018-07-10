@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import * as BooksAPI from '../BooksAPI'
 import Book from './Book'
+import BooksThumbnail from './BooksThumbnail'
 import cover from '../icons/cover.png'
 import search from '../icons/search.png'
 
@@ -39,7 +40,6 @@ class SearchPage extends Component {
 
 	render() {
 		const { books } = this.state;
-		console.log(this.state)
 		return (
 			<div>
 				<div className="search-bar">
@@ -62,7 +62,7 @@ class SearchPage extends Component {
 							if (!book.hasOwnProperty('averageRating')) book.averageRating = 2.5;
 							return (
 							<li key={book.id} style={{"margin": "10px 10px 0 0"}}>
-								<Book book={book} cover={book.imageLinks ? book.imageLinks.thumbnail : cover}/>
+								<BooksThumbnail book={book} cover={book.imageLinks ? book.imageLinks.thumbnail : cover} />
 							</li>
 						)})}
 					</ul>

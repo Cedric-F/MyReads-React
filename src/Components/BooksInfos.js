@@ -9,7 +9,7 @@ class BooksInfos extends Component {
 	}
 
 	componentDidMount() {
-		console.log('Book Info page mounted', this.state, this.props)
+		console.log('Book Info page mounted', this.props.location.state)
 	}
 
 	upVote(book) {
@@ -23,7 +23,7 @@ class BooksInfos extends Component {
 	}
 
 	render() {
-		const { book } = this.props;
+		const { book } = this.props.location.state;
 
 		return book ? (
 			<div className="book-page">
