@@ -28,7 +28,7 @@ class BooksApp extends React.Component {
           <Route path='/' component={NavBar}/>
           <Route exact path='/' render={() => <HomePage books={books}/>}/>
           <Route exact path='/search' render={() => <SearchPage shelved={books}/>}/>
-          <Route exact path='/book/:bookTitle' render={({location}) => <BooksInfos location={location}/>}/>
+          <Route exact path='/book/:bookTitle' component={BooksInfos}/>
       </div>
     )
   }
