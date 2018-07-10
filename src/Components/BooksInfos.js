@@ -13,6 +13,10 @@ class BooksInfos extends Component {
 		console.log('Book Info page mounted', this.props)
 	}
 
+	/*
+	 * Let the user to increase/decrease the book's rating
+	 */
+
 	upVote(book) {
 		if (book.averageRating < 5) book.averageRating += 0.5
 		this.setState({"book": book})
@@ -25,6 +29,7 @@ class BooksInfos extends Component {
 
 	render() {
 		const { book } = this.props.location.state;
+		console.log(book)
 
 		return book ? (
 			<div className="book-page">
@@ -41,7 +46,15 @@ class BooksInfos extends Component {
 								<Dropdown.Toggle noCaret >
 									<Glyphicon glyph="th" />
 								</Dropdown.Toggle>
-								<Dropdown.Menu onSelect={(e) => {this.props.onUpdate(book, e); this.props.history.push('/')}}>
+
+							{/*
+							  * When an option is selected, update the book's shelf and reroute to home page
+							  */}
+
+								<Dropdown.Menu onSelect={(e) => {
+									this.props.onUpdate(book, e);
+									this.props.history.push('/')}}
+								>
 									<MenuItem header>Move to...</MenuItem>
 									<MenuItem divider />
 									<MenuItem eventKey='currentlyReading' disabled={book.shelf === 'currentlyReading'}>Reading</MenuItem>
@@ -51,7 +64,6 @@ class BooksInfos extends Component {
 								</Dropdown.Menu>
 							</Dropdown>
 						</ButtonToolbar>
-    				{/*<Image src={require('../icons/add.svg')} className="move" alt='Move'/>*/}
 					</div>
 				</div>
 				<h2>{book.authors.join`, `}</h2>
