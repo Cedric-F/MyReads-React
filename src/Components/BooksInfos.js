@@ -14,7 +14,8 @@ class BooksInfos extends Component {
 	}
 
 	/*
-	 * Let the user to increase/decrease the book's rating
+	 * Let the user to increase/decrease the book's rating.
+	 * TODO: keep the changes on refresh / moving to another shelf.
 	 */
 
 	upVote(book) {
@@ -48,11 +49,12 @@ class BooksInfos extends Component {
 								</Dropdown.Toggle>
 
 							{/*
-							  * When an option is selected, update the book's shelf and reroute to home page
+							  * When an option is selected, update the book's shelf and reroute to home page.
+							  * The shelf parameter is the Menu Item's eventKey
 							  */}
 
-								<Dropdown.Menu onSelect={(e) => {
-									this.props.onUpdate(book, e);
+								<Dropdown.Menu onSelect={(shelf) => {
+									this.props.onUpdate(book, shelf);
 									this.props.history.push('/')}}
 								>
 									<MenuItem header>Move to...</MenuItem>

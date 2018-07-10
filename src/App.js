@@ -51,7 +51,7 @@ class BooksApp extends React.Component {
    * the book's object is passed to the Route's Location prop,
    * and the title is used to formate the link
    *
-   * The "history" parameter would be used to reroute to HomePage and render the changed shelf.
+   * The "history" parameter is used to reroute to HomePage and render the changed shelf.
    */
 
   render() {

@@ -22,6 +22,10 @@ class BooksThumbnail extends Component {
               )
             }
             {book.averageRating && (<li>{book.averageRating} stars</li>)}
+          	{/*
+          	  * For the consistency, replace the spaces (%20) in the book title with underscores (for the link only)
+          	  * The book data is passed in the location property to ensure access to the book info page
+          	  */}
             {(<li><Link to={{ pathname: `/book/${book.title.replace(/\s/g, '_')}`, state: { "book": book } }}>More details...</Link></li>)}
           </ul>
         </div>
