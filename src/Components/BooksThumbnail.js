@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { Image } from 'react-bootstrap'
 
 class BooksThumbnail extends Component {
-	render() {
-		const { book, cover } = this.props;
-		return (
-			<div className="book-thumbnail">
+  render() {
+    const { book, cover } = this.props;
+    return (
+      <div className="book-thumbnail">
         <Image src={cover} alt={book.title} responsive/>
         <div className="book-desc">
           <ul>
@@ -22,16 +22,16 @@ class BooksThumbnail extends Component {
               )
             }
             {book.averageRating && (<li>{book.averageRating} stars</li>)}
-          	{/*
-          	  * For the consistency, replace the spaces (%20) in the book title with underscores (for the link only)
-          	  * The book data is passed in the location property to ensure access to the book info page
-          	  */}
+            {/*
+              * For the consistency, replace the spaces (%20) in the book title with underscores (for the link only)
+              * The book data is passed in the location property to ensure access to the book info page
+              */}
             {(<li><Link to={{ pathname: `/book/${book.title.replace(/\s/g, '_')}`, state: { "book": book } }}>More details...</Link></li>)}
           </ul>
         </div>
       </div>
-		)
-	}
+    )
+  }
 }
 
 export default BooksThumbnail

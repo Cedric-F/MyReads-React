@@ -1,92 +1,98 @@
-# MyReads Project
+# MyReads Project Single Page Application
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
+A Book Tracking React Application for the Udacity Front End Nanodegree program.
 
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
+## Getting started
 
-## TL;DR
+**Installation**
 
-To get started developing right away:
+_Cloning the repository_
+
+```
+git clone https://github.com/Cedric-F/Restaurant-Reviews-FEND.git
+```
+
+_Dependencies and server_
 
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
-## What You're Getting
-```bash
+## Structure
+
+```
 ├── CONTRIBUTING.md
 ├── README.md - This file.
-├── SEARCH_TERMS.md # The whitelisted short collection of available search terms for you to use with your app.
-├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
+├── SEARCH_TERMS.md
+├── package.json
 ├── public
-│   ├── favicon.ico # React Icon, You may change if you wish.
-│   └── index.html # DO NOT MODIFY
+│   ├── favicon.ico
+│   └── index.html
 └── src
-    ├── App.css # Styles for your app. Feel free to customize this as you desire.
-    ├── App.js # This is the root of your app. Contains static HTML right now.
-    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-    ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
-    ├── icons # Helpful images for your app. Use at your discretion.
-    │   ├── add.svg
-    │   ├── arrow-back.svg
-    │   └── arrow-drop-down.svg
-    ├── index.css # Global styles. You probably won't need to change anything here.
-    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
+    ├── Components
+    │   ├── HomePage.js
+    │   ├── NavBar.js
+    │   ├── Shelf.js
+    │   ├── BooksThumbnail.js
+    │   ├── BooksInfos.js
+    │   └── SearchPage.js
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── BooksAPI.js
+    ├── icons
+    │   ├── add.svg
+    │   ├── arrow-back.svg
+    │   └── arrow-drop-down.svg
+    ├── index.css
+    └── index.js
 ```
 
-Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.
+## Using the Application
 
-## Backend Server
+**Moving the books on the shelves**
 
-To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
+1. Choose a book on the main page, and click on the thumbnail link.
+2. In the info page, there is a controller by the book cover.
+3. Click on it to display the shelf menu.
+4. When changing the shelf, you're redirected to the Home Page where the shelves are updated.
+5. Selecting "None" will remove the book from the Home Page.
 
-* [`getAll`](#getall)
-* [`update`](#update)
-* [`search`](#search)
+**Find and add a book**
 
-### `getAll`
+1. On the Navigation Menu, select "Search a book".
+2. In the search bar, start typing your query to display the matching books.
+**Important:** The query are limited to a specific set of words, see [Search terms](./SEARCH_TERMS.md).
+3. Open the Info page of your book and use the controller to add it to the shelf you want.
 
-Method Signature:
+**Incomplete: Rating**
 
-```js
-getAll()
-```
+1. In a Book page, the rating system will change the stars value of a book and render it in the book thumbnail.
+2. TODO: Keep the changes on refresh / moving the book to another shelf
 
-* Returns a Promise which resolves to a JSON object containing a collection of book objects.
-* This collection represents the books currently in the bookshelves in your app.
+## License
 
-### `update`
+None.
 
-Method Signature:
+## Dependencies
 
-```js
-update(book, shelf)
-```
+The following dependencies have been used to build this project.
+Make sure to run `npm install` before launching the project.
 
-* book: `<Object>` containing at minimum an `id` attribute
-* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]  
-* Returns a Promise which resolves to a JSON object containing the response data of the POST request
-
-### `search`
-
-Method Signature:
-
-```js
-search(query)
-```
-
-* query: `<String>`
-* Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
-* These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
-
-## Important
-The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
-
-## Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+* [React](https://github.com/facebook/React)
+* [React Bootstrap](https://github.com/react-bootstrap/react-bootstrap)
+* [React Router](https://github.com/ReactTraining/react-router)
+* [React Router Bootstrap](https://github.com/react-bootstrap/react-router-bootstrap)
+* [Udacity Books API](https://reactnd-books-api.udacity.com)
 
 ## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+This repository is a Student Project for Udacity FEND. Contributions are unlikely to be accepted.
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## Compatibility
+
+Tested on:
+
+* Chrome
+* Chrome Canary
+* FireFox
+* FireFox Dev Edition
