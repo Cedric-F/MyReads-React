@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Book from './Book'
-import { Scrollbars } from 'react-custom-scrollbars'
+import BooksThumbnail from './BooksThumbnail'
 import cover from '../icons/cover.png'
 
 class Shelf extends Component {
@@ -49,7 +48,7 @@ class Shelf extends Component {
 							if (!book.hasOwnProperty('averageRating')) book.averageRating = 2.5;
 							return (
 							<li key={book.id} style={{"margin": "10px 10px 0 0"}}>
-								<Book book={book} cover={book.imageLinks ? book.imageLinks.thumbnail : cover}/>
+								<BooksThumbnail book={book} cover={book.imageLinks ? book.imageLinks.thumbnail : cover} />
 							</li>
 						)})
 					}

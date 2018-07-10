@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Nav, Navbar, Header, Brand, NavItem, Toggle, Image } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap';
 
-class Head extends Component {
+class NavBar extends Component {
 
 	componentDidMount() {
 		console.log('Header mounted');
@@ -33,4 +33,4 @@ class Head extends Component {
 
 }
 
-export default Head
+export default NavBar

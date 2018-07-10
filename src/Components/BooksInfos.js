@@ -2,15 +2,14 @@ import React, { Component } from 'react'
 import { Image } from 'react-bootstrap'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
-class Infos extends Component {
+class BooksInfos extends Component {
 
 	state = {
 		book: []
 	}
 
 	componentDidMount() {
-		console.log('Book Info page mounted')
-		console.log(this.props)
+		console.log('Book Info page mounted', this.state, this.props)
 	}
 
 	upVote(book) {
@@ -26,7 +25,7 @@ class Infos extends Component {
 	render() {
 		const { book } = this.props;
 
-		return (
+		return book ? (
 			<div className="book-page">
 				<h1>{book.title}</h1>
 				<h2>{book.subtitle}</h2>
@@ -43,8 +42,8 @@ class Infos extends Component {
 				<h2>Synopsis</h2>
 				<p>{book.description}</p>
 			</div>
-		)
+		) : (<h1>foo</h1>)
 	}
 }
 
-export default Infos
+export default BooksInfos

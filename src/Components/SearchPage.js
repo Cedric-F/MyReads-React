@@ -4,7 +4,7 @@ import Book from './Book'
 import cover from '../icons/cover.png'
 import search from '../icons/search.png'
 
-class Search extends Component {
+class SearchPage extends Component {
 
 	state = {
 		query: '',
@@ -72,4 +72,4 @@ class Search extends Component {
 	}
 }
 
-export default Search;
+export default SearchPage
