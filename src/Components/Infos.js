@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Image } from 'react-bootstrap'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
 class Infos extends Component {
 
@@ -8,7 +9,8 @@ class Infos extends Component {
 	}
 
 	componentDidMount() {
-		return this.props.book.find(e => e.title === window.location.href.replace(/_/g, ' ').substr(28));
+		console.log('Book Info page mounted')
+		console.log(this.props)
 	}
 
 	upVote(book) {
@@ -22,7 +24,8 @@ class Infos extends Component {
 	}
 
 	render() {
-		const book = this.componentDidMount();
+		const { book } = this.props;
+
 		return (
 			<div className="book-page">
 				<h1>{book.title}</h1>

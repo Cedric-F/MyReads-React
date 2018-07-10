@@ -38,7 +38,6 @@ class BooksApp extends React.Component {
             <Shelf title="Read" shelf="read" books={books.filter(book => book.shelf === "read")} />
           </div>
         )} />
-        <Route path='/books/' render={() => (<Infos book={books}/>)}/>
         <Route exact path='/search' render={() => (<Search shelved={this.state.books}/>)}/>
       </div>
     )
