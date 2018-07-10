@@ -43,6 +43,18 @@ class BooksApp extends React.Component {
     .then(this.getBooks.bind(this))
   }
 
+  /*updateRating(book, rating) {
+    BooksAPI.updateRating(book, rating)
+    .then(() => {
+      book.averageRating = rating;
+
+      this.setState((state) => {
+        books: state.books.concat([ book ])
+      })
+    })
+    .then(this.getBooks.bind(this))
+  }*/
+
   /*
    * Render the Components at their respective locations.
    *
