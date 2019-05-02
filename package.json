@@ -1,5 +1,5 @@
 {
-	"homepage": "http://cedric-f.github.io/MyReads-React",
+  "homepage": "http://cedric-f.github.io/MyReads-React",
   "dependencies": {
     "gh-pages": "^1.2.0",
     "prop-types": "^15.6.1",
@@ -13,7 +13,7 @@
     "react-text-truncate": "^0.13.1"
   },
   "devDependencies": {
-    "react-scripts": "1.1.4"
+    "react-scripts": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,6 +21,18 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-  	"deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
