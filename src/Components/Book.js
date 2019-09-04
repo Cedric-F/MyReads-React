@@ -6,6 +6,7 @@ class Book extends Component {
 
   render() {
     const { book, cover } = this.props;
+    const home = `${process.env.PUBLIC_URL}/MyReads-React/`;
     console.log(book)
 
     return (
@@ -26,7 +27,7 @@ class Book extends Component {
                 )
               }
               {book.averageRating && (<li>{book.averageRating} stars</li>)}
-              {(<li><Link to={{ pathname: `/books/${book.title.replace(/\s/g, '_')}` }}>More details...</Link></li>)}
+              {(<li><Link to={{ pathname: `${home}books/${book.title.replace(/\s/g, '_')}` }}>More details...</Link></li>)}
             </ul>
           </div>
         </div>

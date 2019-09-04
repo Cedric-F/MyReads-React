@@ -69,14 +69,14 @@ class BooksApp extends React.Component {
   render() {
 
     const { books } = this.state;
-    const home = process.env.PUBLIC_URL;
+    const home = `${process.env.PUBLIC_URL}/MyReads-React/`;
 
     return (
       <div className="app">
-          <Route path={`${home}/`} component={NavBar}/>
-          <Route exact path={`${home}/`} render={() => <HomePage books={books}/>}/>
-          <Route exact path={`${home}/search`} render={() => <SearchPage shelved={books}/>}/>
-          <Route exact path={`${home}/book/:bookTitle`} render={({location, history}) => <BooksInfos history={history} location={location} onUpdate={this.updateBook.bind(this)}/>}/>
+          <Route path={`${home}`} component={NavBar}/>
+          <Route exact path={`${home}`} render={() => <HomePage books={books}/>}/>
+          <Route exact path={`${home}search`} render={() => <SearchPage shelved={books}/>}/>
+          <Route exact path={`${home}book/:bookTitle`} render={({location, history}) => <BooksInfos history={history} location={location} onUpdate={this.updateBook.bind(this)}/>}/>
       </div>
     )
   }

@@ -30,6 +30,7 @@ class BooksInfos extends Component {
 
   render() {
     const { book } = this.props.location.state;
+    const home = `${process.env.PUBLIC_URL}/MyReads-React/`;
     console.log(book);
 
     return book ? (
@@ -55,7 +56,7 @@ class BooksInfos extends Component {
 
                 <Dropdown.Menu onSelect={(shelf) => {
                   this.props.onUpdate(book, shelf);
-                  this.props.history.push('/')}}
+                  this.props.history.push(home)}}
                 >
                   <MenuItem header>Move to...</MenuItem>
                   <MenuItem divider />
