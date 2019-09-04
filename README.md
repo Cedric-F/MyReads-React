@@ -1,6 +1,7 @@
 # MyReads Project Single Page Application
 
 A Book Tracking React Application for the Udacity Front End Nanodegree program.
+
 [Live page](https://cedric-f.github.io/MyReads-React/)
 
 ## Getting started
