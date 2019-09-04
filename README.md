@@ -2,7 +2,7 @@
 
 A Book Tracking React Application for the Udacity Front End Nanodegree program.
 
-[Live page](https://cedric-f.github.io/MyReads-React/)
+[Live page](https://cedric-f.github.io/MyReads-React/) (Click on the Navband logo to display the books. See [issue#1](https://github.com/Cedric-F/MyReads-React/issues/1) )
 
 ## Getting started
 
