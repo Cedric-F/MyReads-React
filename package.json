@@ -13,7 +13,7 @@
     "react-text-truncate": "^0.13.1"
   },
   "devDependencies": {
-    "react-scripts": "^3.0.0"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
